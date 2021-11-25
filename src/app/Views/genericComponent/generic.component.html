@@ -1,0 +1,16 @@
+<div *ngIf="this.componentEnum " >
+  this is {{this.componentEnum}} Component MAMENE
+  <div *ngIf="this.componentEnum === 'IMGUR'" >
+    <app-imgur> </app-imgur>
+  </div>
+
+  <div *ngIf="this.componentEnum === 'STEAM'" >
+    <app-steam></app-steam>
+  </div>
+
+</div>
+
+
+<div *ngIf="!this.componentEnum" >
+  this is vieer Component MAMENE
+</div>

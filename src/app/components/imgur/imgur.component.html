@@ -1,0 +1,7 @@
+<app-filter serviceNeeded="imgur" ></app-filter>
+<div *ngFor="let image of this.myGalleryData" style="display: inline-block ; flex-direction: column; justify-content: space-between" >
+  <div  *ngIf="image.images" style="padding: 15px">
+    <img [src]="image.images[0].link" width="250" height="230" style="border-radius: 20px">
+  </div>
+
+</div>

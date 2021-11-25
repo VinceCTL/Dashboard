@@ -1,0 +1,38 @@
+<div class="card" >
+  <h5>Widgets</h5>
+
+  <div id="onglets" >
+    <p-tabView styleClass="tabview-custom">
+
+      <p-tabPanel [closable]="false" >
+        <ng-template pTemplate = "header" >
+          <i class="pi pi-cloud"></i>
+          <span style="margin-left: 5px" >Weather</span>
+        </ng-template>
+        <app-weather></app-weather>
+      </p-tabPanel>
+
+      <p-tabPanel *ngFor="let tab Of this.tabList; let indexTab = index" [header]="tab.header"  >
+          <ng-template pTemplate = "header">
+            <div (click)="this.onClickTabPlus(indexTab, $event, selectService)" >
+              <i class="pi pi-user"></i>
+              <span style="margin-left: 5px" > {{indexTab + 1 === tabList.length ? '+' : this.enumSelectedList[indexTab]}} </span>
+            </div>
+          </ng-template>
+        <div  >
+          <app-generic-component [componentEnum]="this.enumSelectedList[indexTab]" >  </app-generic-component>
+        </div>
+      </p-tabPanel>
+
+    </p-tabView>
+
+    <p-overlayPanel #selectService>
+      <ng-template pTemplate>
+        <h3>Select your Service</h3>
+        <div *ngFor="let enum of this.enumList" style="display: inline-block" >
+          <div > <button pButton style="margin-right: 8px" [label]="enum" (click)="this.onSelectedService(enum, selectService, $event)" ></button> </div>
+        </div>
+      </ng-template>
+    </p-overlayPanel>
+  </div>
+</div>

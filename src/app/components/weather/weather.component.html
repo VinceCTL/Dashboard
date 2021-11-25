@@ -1,0 +1,27 @@
+<app-filter [serviceNeeded]="'weather'"></app-filter>
+<div class="divAll"  >
+  <div class="divWeatherMain" >
+
+    <div *ngIf="this.isDay" class="weatherWidgetRow" >
+<!--      <i class="fas faSun sun"></i>-->
+      <div class="sun" ><fa-icon [icon]="faSun" size="6x" ></fa-icon></div>
+    </div>
+
+    <div *ngIf="!this.isDay" class="weatherWidgetRow">
+      <div class="moon" ><fa-icon [icon]="faMoon" size="6x" ></fa-icon></div>
+    </div>
+
+    <div>
+      <div class="weatherWidgetRow cloudDiv">
+        <div class="cloud" ><fa-icon [icon]="faCloud" [size]="'6x'" ></fa-icon></div>
+      </div>
+    </div>
+
+    <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;"> {{this.name}} </div>
+    <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;"> temp : {{this.temperature}}C° </div>
+    <div class="weatherWidgetRow" style="font-size: 18px;">Min / Max : {{this.tempMin}} C° / {{this.tempMax}} C°</div>
+    <div class="weatherWidgetRow" style="font-size: 18px;">Ressenti: {{this.ressenti}}</div>
+    <div class="weatherWidgetRow" ></div>
+    <div class="weatherWidgetRow" ></div>
+  </div>
+</div>

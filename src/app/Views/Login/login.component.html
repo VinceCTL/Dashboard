@@ -1,0 +1,29 @@
+
+
+<div style="display: flex; justify-content: center; align-items: center; height: 20rem; flex-direction: column" >
+  <h3>Login to DashBoard</h3>
+  <div class="p-grid p-fluid">
+    <div class="p-col-12 p-md-4">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+        <input [(ngModel)]="inputUser"  type="text" pInputText placeholder="Username">
+      </div>
+    </div>
+</div>
+
+  <div>
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+      <input [(ngModel)]="this.inputPassword"  type="password" placeholder="Password"/>
+    </div>
+  </div>
+
+  <div style="margin-top: 10px" >
+    <button pButton label="Go" (click)="this.getInfos()" [routerLink]="'/view/Home'" ></button>
+  </div>
+
+  <div style="margin-top: 10px">
+    <div><p>not registered ? Go to Register Page, <button pButton label="here" [routerLink]="'/view/Register'" ></button> </p>  </div>
+  </div>
+
+</div>

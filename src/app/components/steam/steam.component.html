@@ -1,0 +1,21 @@
+<input pInputText [(ngModel)]="this.inputSearch" (ngModelChange)="getSearchStrainsByName()" >
+<p></p>
+<ng-template pTemplate="header"  ></ng-template>
+<div style="display: flex; flex-direction: row; justify-content: space-between" >
+  <div >Name of strain</div>
+  <div >Race</div>
+  <div >flavors</div>
+<!--  <div >effects</div>-->
+</div>
+<p-dataView [value]="this.myOgListCpy" >
+  <ng-template pTemplate="listItem" let-strain let-index="rowIndex">
+
+    <ng-template pTemplate="body" ></ng-template>
+    <div style="display: flex; flex-direction: row; justify-content: space-between" >
+      <th>{{strain.name}}</th>
+      <th>{{strain.race}}</th>
+      <th>{{strain.flavors}}</th>
+<!--      <th>{{strain.effects}}</th>-->
+    </div>
+  </ng-template>
+</p-dataView>

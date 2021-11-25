@@ -1,0 +1,18 @@
+
+<button pButton style="float: right" label=" Timer" pTooltip="Choose an Interval of time to refresh the Data" (click)="this.onClickTimer()" > <fa-icon [icon]="faClock" ></fa-icon> </button>
+
+<p-dialog [(visible)]="this.display" [transitionOptions]="'60ms'" >
+  <p-header>
+    Choose an interval of time
+  </p-header>
+  <div style="padding: 20px; display: flex; flex-direction: row" >
+    <p-inputNumber pInputText [(ngModel)]="this.intervalSet"></p-inputNumber>
+    <p style="margin-left: 15px"> in Seconds</p>
+  </div>
+  <p-footer>
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
+      <p>current interval is: {{this.currentInterval}}</p>
+      <button pButton label="validate" (click)="this.onValidationInterval()" ></button>
+    </div>
+  </p-footer>
+</p-dialog>
